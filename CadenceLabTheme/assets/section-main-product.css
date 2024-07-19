@@ -162,16 +162,18 @@
 /* Form Elements */
 .product-form__input {
   display:flex;
-  gap:6.5%;
   padding: 0;
   margin: 0 0 1.2rem 0;
   max-width: 37rem;
   border: none;
 }
 
-variant-radios,
-variant-selects {
-  display: block;
+variant-radios .product-form__input {
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  max-width:100%;
+  gap:3.5%;
 }
 
 .product-form__input--dropdown {
@@ -199,9 +201,6 @@ fieldset.product-form__input .form__label {
   background-color: #c4c4c4;
   color: #ffffff;
   border-radius: 50%;
-  flex: 1 1 auto;
-  height:7rem;
-  width:7rem;
   display: inline-flex;
   margin: 0.7rem 0.5rem 0.2rem 0;
   padding: 2rem;
@@ -214,6 +213,9 @@ fieldset.product-form__input .form__label {
   position: relative;
   align-items: center;
   justify-content: center;
+  height: 75px;
+  width: 75px;
+  max-width: 75px;
 }
 
 .product-form__input input[type='radio'] + label:before {
@@ -238,12 +240,6 @@ fieldset.product-form__input .form__label {
 }
 
 @media screen and (max-width: 749px) {
-  .product-form__input input[type=radio]+label {
-    width: 5.2rem;
-    height: 5.2rem;
-    font-size: 0.7rem;
-  }
-
   variant-radios .product-form__input {
     gap:3%;
   }
@@ -542,8 +538,9 @@ a.product__text {
     background-color: rgba(var(--color-foreground), 0.2);
   }
 
-  .product__media-list .product__media-item {
+  .slider-mobile-gutter .product__media-list .product__media-item {
     width: calc(100% - 3rem - var(--grid-mobile-horizontal-spacing));
+    margin:0 1.5rem;
   }
 
   .product--mobile-columns .product__media-item {
@@ -573,10 +570,6 @@ a.product__text {
   .product-media-modal__content > .product__media-item--variant:first-child {
     display: block;
   }
-}
-
-.product__media-item.product__media-item--variant {
-  display: none;
 }
 
 .product__media-item--variant:first-child {
@@ -1338,14 +1331,14 @@ a.product__text {
   align-items: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 780px) {
   .product-add-to-cart {
     flex-direction: row;
     flex-wrap: wrap;
     gap:12px;
   }
   .product-add-to-cart .child {
-    width:48%;
+    width:47%;
   }
   .product-add-to-cart .child:last-of-type {
     width:100%;
